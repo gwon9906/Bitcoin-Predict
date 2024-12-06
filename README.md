@@ -1,11 +1,7 @@
 # Bitcoin Price Prediction with Multi-Output CNN-LSTM Model
 
 <p align="center">
-  <img src="https://example.com/logo.png" alt="Project Logo" width="200">
-</p>
-
-<p align="center">
-  <b>Predict Bitcoin closing prices in USD and KRW with deep learning</b>
+  <b>Predict Bitcoin closing prices in USD and KRW with advanced deep learning models</b>
 </p>
 
 ---
@@ -33,28 +29,31 @@
 
 ---
 
-## Model Architecture
+## CNN-LSTM Architecture
 
-<p align="center">
-  <img src="https://example.com/model-architecture.png" alt="Model Architecture" width="600">
-</p>
+This model combines the feature extraction power of **Convolutional Neural Networks (CNN)** with the temporal modeling capabilities of **Long Short-Term Memory (LSTM)** layers.
 
+
+### **Key Components**
 - **Input**:
   - Price data (`usd_open`, `krw_open`, etc.).
   - Global trends (`bitcoin`, `coinbase`).
   - Korean trends (`비트코인`, `업비트`).
-- **Layers**:
-  - Convolutional and MaxPooling layers for price data.
-  - LSTM layers for trend data.
+
+- **CNN Layers**:
+  - Extracts key patterns from price data.
+  - Reduces dimensionality using MaxPooling layers.
+
+- **LSTM Layers**:
+  - Models sequential dependencies in price and trend data.
+  - Separate LSTM layers for Korean and global trends.
+
+- **Fully Connected Layers**:
+  - Combines all extracted features.
+  - Outputs the predicted `usd_close` and `krw_close`.
+
 - **Outputs**:
   - `usd_close`: Predicted closing price in USD.
   - `krw_close`: Predicted closing price in KRW.
 
 ---
-
-## Installation
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/your-repository.git
-   cd your-repository
